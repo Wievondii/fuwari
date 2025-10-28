@@ -24,17 +24,14 @@ import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
 
-// 导入 Cloudflare 适配器
-import cloudflare from "@astrojs/cloudflare";
+// 注意：已移除 Cloudflare 适配器导入
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://265878.xyz",
 	base: "/",
 	trailingSlash: "always",
-	// 添加 Cloudflare 适配器配置
-	adapter: cloudflare(),
-	//output: 'server',
+	// 注意：已移除 adapter 和 output 配置，Astro 默认使用静态生成
 	integrations: [
 		tailwind({
 			nesting: true,
