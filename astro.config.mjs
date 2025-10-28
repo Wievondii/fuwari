@@ -34,7 +34,7 @@ export default defineConfig({
 	trailingSlash: "always",
 	// 添加 Cloudflare 适配器配置
 	adapter: cloudflare(),
-	output: 'server',
+	//output: 'server',
 	integrations: [
 		tailwind({
 			nesting: true,
