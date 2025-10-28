@@ -24,11 +24,17 @@ import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
 
+// 导入 Cloudflare 适配器
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://265878.xyz",
 	base: "/",
 	trailingSlash: "always",
+	// 添加 Cloudflare 适配器配置
+	adapter: cloudflare(),
+	output: 'server',
 	integrations: [
 		tailwind({
 			nesting: true,
